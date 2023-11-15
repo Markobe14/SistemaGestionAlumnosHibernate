@@ -1,6 +1,7 @@
 package mx.markobe.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Alumno implements Serializable{
@@ -35,6 +37,10 @@ public class Alumno implements Serializable{
     @ManyToOne
     private Contacto contacto;
 
+    //--------------Hacemos el mapeo bidireccional--------------
+    //Configuramos la relacion de Alumno hacia Asignacion, ahora es de uno a muchos
+    @OneToMany(mappedBy = "alumno")
+    private List<Asignacion> asignaciones;
     
     public Alumno() {
     }
@@ -84,6 +90,15 @@ public class Alumno implements Serializable{
     public void setContacto(Contacto contacto) {
         this.contacto = contacto;
     }
+
+    public List<Asignacion> getAsignaciones() {
+        return asignaciones;
+    }
+
+    public void setAsignaciones(List<Asignacion> asignaciones) {
+        this.asignaciones = asignaciones;
+    }
+    
 
     @Override
     public String toString() {

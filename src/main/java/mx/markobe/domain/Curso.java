@@ -1,12 +1,14 @@
 package mx.markobe.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Curso implements Serializable{
@@ -21,6 +23,11 @@ public class Curso implements Serializable{
     private String nombre;
     
     private Double precio;
+    
+    //--------------Hacemos el mapeo bidireccional--------------
+    //Configuramos la relacion de Curso hacia Asignacion, ahora es de uno a muchos
+    @OneToMany(mappedBy = "curso")
+    private List<Asignacion> asignaciones; //No se recomienda agregar este atributo al metodo toStrign
     
     public Curso(){
         
@@ -54,6 +61,15 @@ public class Curso implements Serializable{
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
+
+    public List<Asignacion> getAsignaciones() {
+        return asignaciones;
+    }
+
+    public void setAsignaciones(List<Asignacion> asignaciones) {
+        this.asignaciones = asignaciones;
+    }
+    
 
     @Override
     public String toString() {
