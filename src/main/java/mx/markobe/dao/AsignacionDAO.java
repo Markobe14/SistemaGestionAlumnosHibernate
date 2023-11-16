@@ -1,29 +1,82 @@
 package mx.markobe.dao;
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
+import static mx.markobe.dao.GenericDAO.em;
 import mx.markobe.domain.Asignacion;
-import mx.markobe.domain.Domicilio;
 
-public class AsignacionDAO {
+
+public class AsignacionDAO extends GenericDAO{
     
-    private EntityManagerFactory emf;
-    private EntityManager em;
-    
-    public AsignacionDAO(){
-        emf = Persistence.createEntityManagerFactory("HibernatePU");
-        em = emf.createEntityManager();
+    public List<Asignacion> listarAsignacions() {
+
+        String consulta = "SELECT a FROM Asignacion a";
+        em = getEntityManager();
+        Query query = em.createQuery(consulta);
+
+        List<Asignacion> asignacions = query.getResultList();
+
+        return asignacions;
+    }
+
+    public void intertarAsignacion(Asignacion asignacion) {
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            em.persist(asignacion);
+            em.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+
+        } finally {
+            if (em!= null) {
+                em.clear();
+            }
+        }
     }
     
-    public List<Asignacion> listarAsignaciones(){
-        String hql = "Select a FROM Asignacion a";
-        Query query = em.createQuery(hql);
-        List<Asignacion> asignaciones = query.getResultList();
+    public void actualizarDomicilio(Asignacion asignacion) {
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            em.merge(asignacion); //Merge es para modificar
+            em.getTransaction().commit();
+            
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+            
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+
+    }
+    
+    public void eliminarDomicilio(Asignacion asignacion) {
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            em.remove(em.merge(asignacion)); //Remove y merge, primero actualiza el estado de la BD y luego lo elimina
+            em.getTransaction().commit();
+            
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+            
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+
+    }
+    
+        public Object buscarDomicilioPorId(Asignacion asignacion){
         
-        return asignaciones;
+        em = getEntityManager();
+        return em.find(Asignacion.class, asignacion.getIdAsignacion());
+        
     }
     
 }
