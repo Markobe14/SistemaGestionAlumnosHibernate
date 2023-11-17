@@ -1,2 +1,12 @@
-mx\com\markobe\SgaWebHibernateJPA\JAXRSConfiguration.class
-mx\com\markobe\SgaWebHibernateJPA\resources\JavaEE8Resource.class
+mx\markobe\domain\Alumno.class
+mx\markobe\dao\DomicilioDAO.class
+mx\markobe\dao\ContactoDAO.class
+mx\markobe\dao\AlumnoDAO.class
+mx\markobe\domain\Asignacion.class
+mx\markobe\dao\CursoDAO.class
+mx\markobe\domain\Domicilio.class
+mx\markobe\domain\Curso.class
+mx\markobe\test\TestDAOs.class
+mx\markobe\dao\AsignacionDAO.class
+mx\markobe\domain\Contacto.class
+mx\markobe\dao\GenericDAO.class

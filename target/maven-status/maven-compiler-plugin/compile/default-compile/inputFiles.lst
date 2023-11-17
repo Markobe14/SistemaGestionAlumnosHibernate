@@ -1,2 +1,12 @@
-D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\com\markobe\SgaWebHibernateJPA\JAXRSConfiguration.java
-D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\com\markobe\SgaWebHibernateJPA\resources\JavaEE8Resource.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\domain\Domicilio.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\dao\AsignacionDAO.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\dao\CursoDAO.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\domain\Curso.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\domain\Contacto.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\dao\DomicilioDAO.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\dao\ContactoDAO.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\domain\Asignacion.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\dao\GenericDAO.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\domain\Alumno.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\test\TestDAOs.java
+D:\aguir\Documents\Alejandro\Java\Udemy\Hibernate\Leccion4 Asociaciones\SgaWebHibernateJPA\src\main\java\mx\markobe\dao\AlumnoDAO.java
